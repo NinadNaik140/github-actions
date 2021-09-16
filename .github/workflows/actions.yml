@@ -15,7 +15,11 @@ jobs:
         run: echo "${{steps.greet.outputs.time}}"
       - name: ls and pwd
         run: |
-          ls
+          ls -a
           pwd
       - name: actions/checkout
         uses: actions/checkout@v1
+      - name: ls and pwd after actions/checkout
+        run: |
+          ls -a
+          pwd
