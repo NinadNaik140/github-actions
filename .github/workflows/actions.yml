@@ -1,13 +1,14 @@
 name: actions wf
 
 on: 
-  #push: 
-  schedule:
-    - cron: "0/5 * * * *"
-    - cron: "0/6 * * * *"
+  # push: 
+  # #schedule:
+  #   - cron: "0/5 * * * *"
+  #   - cron: "0/6 * * * *"
   pull_request:
     types: [closed, opened, assigned, reopened]
-
+  repository_dispatch:
+    types: [build]
 jobs:
   run-git-actions:
     runs-on: ubuntu-latest
