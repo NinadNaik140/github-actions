@@ -27,3 +27,5 @@ jobs:
           echo $GITHUB_SHA
           echo "${{github.token}}"
           echo $GITHUB_REPOSITORY
+      - name: payload
+        run: echo ${{github.event.client_payload}}
