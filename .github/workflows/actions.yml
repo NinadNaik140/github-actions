@@ -17,6 +17,9 @@ jobs:
         run: |
           ls -a
           pwd
+          echo $GITHUB_SHA
+          echo "{{$github.token}}"
+          echo $GITHUB_REPOSITORY
       - name: actions/checkout
         uses: actions/checkout@v1
       - name: ls and pwd after actions/checkout
