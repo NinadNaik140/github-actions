@@ -7,11 +7,11 @@ jobs:
       - name: echo string
         run: echo "hello"
       - name: multiline script
-        run: 
+        run: |
           node -v
           npm -v
       - name: python commands
-        run: 
+        run: |
           import platform
           print(platform.processor())
         shell: python
