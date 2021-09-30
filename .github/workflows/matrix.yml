@@ -12,4 +12,4 @@ jobs:
         with:
           node-version : 10
       - name: disp -v
-        run: node-v
+        run: node -v
