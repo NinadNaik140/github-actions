@@ -1,0 +1,15 @@
+name: Matric
+on: push
+
+jobs:
+  node-v:
+    runs-on: ubuntu-latest
+    steps:
+      - name: diso node
+        run: node -v
+      - name: change -v
+        uses: actions/setup-node@v1
+        with:
+          node-version : 10
+      - name: disp -v
+        run: node-v
