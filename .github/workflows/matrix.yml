@@ -3,13 +3,17 @@ on: push
 
 jobs:
   node-v:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix: 
+        ops: [macos-latest, ubuntu-latest, windows-latest]
+        node: [6, 8, 9]
+    runs-on: ${{matrix.ops}}
     steps:
       - name: diso node
         run: node -v
       - name: change -v
         uses: actions/setup-node@v1
         with:
-          node-version : 10
+          node-version : ${{matrix.node}}
       - name: disp -v
         run: node -v
